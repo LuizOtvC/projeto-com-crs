@@ -23,4 +23,9 @@ public class FuncionarioService {
        return repository.lerTodos();
     }
     
+    public FuncionarioBEAN lerID(int id){
+        
+        return repository.lerID(id);
+    }
+    
 }

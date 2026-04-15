@@ -47,4 +47,31 @@ public class FuncionarioDAO {
         return dados;
     }
     
+    public FuncionarioBEAN lerID(int id){
+        FuncionarioBEAN Funcionario = new FuncionarioBEAN();
+        try{
+            Connection conn = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conn.prepareStatement("SELECT * FROM funcionario WHERE id = ?");
+            stmt.setInt(1, id);
+            
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                
+                
+                Funcionario.setId(rs.getInt("id"));
+                Funcionario.setNome(rs.getString("nome"));
+                Funcionario.setCargo(rs.getString("cargo"));
+                Funcionario.setDepartamento(rs.getString("departamento"));
+                Funcionario.setEmail(rs.getString("email"));
+                Funcionario.setDataContratacao(rs.getDate("data_contratacao"));
+                               
+            }
+    }catch (SQLException e){
+           e.printStackTrace();
+        }
+    return Funcionario;
+}
 }
