@@ -28,4 +28,15 @@ public class FuncionarioService {
         return repository.lerID(id);
     }
     
+    public void Editar(FuncionarioBEAN funcionario){       
+        repository.Salvar(funcionario);
+    }
+    
+    public void Inserir(FuncionarioBEAN inserir){
+        repository.Inserir(inserir);
+    }
+    
+    public void Deletar(int id){
+        repository.Deletar(id);
+    }
 }

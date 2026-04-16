@@ -10,6 +10,67 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <header>
+            <a href ="/funcionarios"> Voltar </a>
+        </header>
+        <main>
+            <h2>
+                Editar dados
+            </h2>
+            <form th:action="@{/salvar}" th:object="${funcionario}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <label> Nome: </label>
+                <input type="text" th:field="*{nome}" ><br />
+                <label> Cargo: </label>
+                <input type="text" th:field="*{cargo}" ><br />
+                <label> Departamento: </label>
+                <input type="text" th:field="*{departamento}" ><br />
+                <label> Email: </label>
+                <input type="email" th:field="*{email}" ><br />
+                <label> Data de contratação: </label>
+                <input type="date" th:field="*{dataContratacao}" ><br />
+                <br>
+                <button type="submit"> Salvar</button>
+                </form>
+            <br>
+            <br>
+            <h2> Inserir dados</h2>
+            <form th:action="@{/inserir}" th:object="${funcionario}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <label> Nome: </label>
+                <input type="text" th:field="*{nome}" ><br />
+                <label> Cargo: </label>
+                <input type="text" th:field="*{cargo}" ><br />
+                <label> Departamento: </label>
+                <input type="text" th:field="*{departamento}" ><br />
+                <label> Email: </label>
+                <input type="email" th:field="*{email}" ><br />
+                <label> Data de contratação: </label>
+                <input type="date" th:field="*{dataContratacao}" ><br />
+                <br>
+                <button type="submit"> Inserir</button>
+                </form>
+            <br>
+            <br>
+            <h2> Deletar dados</h2>
+            <form th:action="@{/deletar}" th:object="${funcionario}" method="post">
+                <input type="text" th:field="*{id}"/>
+                <label> Nome: </label>
+                <input type="hidden" th:field="*{nome}" ><br />
+                <label> Cargo: </label>
+                <input type="hidden" th:field="*{cargo}" ><br />
+                <label> Departamento: </label>
+                <input type="hidden" th:field="*{departamento}" ><br />
+                <label> Email: </label>
+                <input type="hidden" th:field="*{email}" ><br />
+                <label> Data de contratação: </label>
+                <input type="hidden" th:field="*{dataContratacao}" ><br />
+                <br>
+                <button type="submit"> Deletar</button>
+                </form>
+        </main>
+        <br>
+        <br>
         <table>
             <tr>
                 <th> Id </th>
