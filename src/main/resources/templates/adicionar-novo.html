@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <a href ="/funcionarios"> Voltar </a>
+        </header>
+        <main>
+            <h2>
+                Adicionar dados
+            </h2>
+           
+            <form th:action="@{/inserirNovo}" th:object="${funcionario}" method="post">
+                <label> Nome: </label>
+                <input type="text" th:field="*{nome}" ><br />
+                <label> Cargo: </label>
+                <input type="text" th:field="*{cargo}" ><br />
+                <label> Departamento: </label>
+                <input type="text" th:field="*{departamento}" ><br />
+                <label> Email: </label>
+                <input type="email" th:field="*{email}" ><br />
+                <label> Data de contratação: </label>
+                <input type="date" th:field="*{dataContratacao}" ><br />
+                <br>
+                <button type="submit"> Inserir</button>
+                </form>
+            
+            
+        </main>
+    </body>
+</html>
